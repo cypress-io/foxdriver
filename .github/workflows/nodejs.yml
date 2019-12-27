@@ -20,10 +20,9 @@ jobs:
     container: cypress/browsers:node10.16.0-chrome77-ff71
     steps:
     - uses: actions/checkout@v1
-      with:
-        node-version: '10.x'
     - name: build + test
       run: |
+        export DISPLAY=:99; Xvfb :99 &
         yarn install --frozen-lockfile
         yarn build
         yarn test
