@@ -1,0 +1,12 @@
+{
+  "plugins": ["json-format"],
+  "extends": [
+    "standard",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "indent": [2, 4]
+  }
+}
