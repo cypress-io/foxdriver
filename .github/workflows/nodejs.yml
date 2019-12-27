@@ -25,6 +25,7 @@ jobs:
 
     - name: build + test
       run: |
+        chown -R root $HOME
         whoami
         id
         ls -l
