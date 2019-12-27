@@ -19,7 +19,7 @@ jobs:
     runs-on: [ubuntu-latest]
     container:
       image: cypress/browsers:node10.16.0-chrome77-ff71
-      options: -u node
+      options: -u 1001
     steps:
     - uses: actions/checkout@v1
 
