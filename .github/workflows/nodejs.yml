@@ -26,6 +26,7 @@ jobs:
     - name: build + test
       run: |
         whoami
+        id
         ls -l
         firefox -v
         export DISPLAY=:99; Xvfb :99 &
