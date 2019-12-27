@@ -2,7 +2,7 @@ import FirefoxProfile from 'firefox-profile'
 import Geckodriver from 'geckodriver'
 import { remote } from 'webdriverio'
 
-import Foxdriver from '../lib'
+import Foxdriver from '../../lib'
 
 let browser
 
@@ -26,8 +26,6 @@ beforeAll(async () => {
     browser = await remote({
         // logLevel: 'verbose',
         path: '/',
-        headless: true,
-
         capabilities: {
             browserName: 'firefox',
             'moz:firefoxOptions': {

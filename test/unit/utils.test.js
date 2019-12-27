@@ -2,7 +2,7 @@ import { spy } from 'sinon'
 
 import {
     transformEvaluateArgs, transformEvaluateScript, addEventListener, removeEventListeners
-} from '../lib/utils'
+} from '../../lib/utils'
 
 test('transform script properly', () => {
     expect(transformEvaluateScript('foo', 'someargs')).toEqual(
