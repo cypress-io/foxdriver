@@ -26,10 +26,15 @@ beforeAll(async () => {
     browser = await remote({
         // logLevel: 'verbose',
         path: '/',
+        headless: true,
+
         capabilities: {
             browserName: 'firefox',
             'moz:firefoxOptions': {
-                args: ['--start-debugger-server', '9222'],
+                args: [
+                    '--start-debugger-server', '9222',
+                    '-headless'
+                ],
                 profile: zippedProfile
             }
         }
