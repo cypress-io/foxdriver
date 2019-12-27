@@ -22,6 +22,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: build + test
       run: |
+        firefox -v
         export DISPLAY=:99; Xvfb :99 &
         yarn install --frozen-lockfile
         yarn build
