@@ -1,4 +1,4 @@
-import Foxdriver from '../lib'
+import Foxdriver from '../../lib'
 
 jest.setTimeout(30000)
 

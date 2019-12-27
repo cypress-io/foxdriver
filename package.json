@@ -34,9 +34,9 @@
     "release:minor": "np minor",
     "release:patch": "np patch",
     "test": "run-p test:*",
-    "test:lint": "eslint ./lib ./test",
-    "test:unit": "jest",
-    "test:unit:cover": "jest --coverage",
+    "test:e2e": "jest 'test/e2e' --runInBand",
+    "test:unit": "jest 'test/unit'",
+    "test:unit:cover": "yarn test:unit --coverage",
     "watch": "npm run compile -- --watch"
   },
   "jest": {
