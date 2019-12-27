@@ -1,14 +1,7 @@
 {
   "name": "foxdriver",
-  "version": "0.1.0",
-  "author": "Christian Bromann <christian@saucelabs.com>",
+  "version": "0.2.0",
   "description": "Foxdriver is a Node library which provides a high-level API to control Firefox over the Remote Debugging Protocol",
-  "license": "Apache-2.0",
-  "homepage": "https://github.com/saucelabs/foxdriver#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/saucelabs/foxdriver.git"
-  },
   "keywords": [
     "firefox",
     "remote",
@@ -18,9 +11,16 @@
     "cdp",
     "devtools"
   ],
+  "homepage": "https://github.com/cypress-io/foxdriver#readme",
   "bugs": {
-    "url": "https://github.com/saucelabs/foxdriver/issues"
+    "url": "https://github.com/cypress-io/foxdriver/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cypress-io/foxdriver.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Cypress.io",
   "main": "build/index.js",
   "scripts": {
     "build": "run-s clean compile",
@@ -29,46 +29,14 @@
     "compile": "babel lib/ -d build/ --ignore config --source-maps inline",
     "eslint": "eslint ./lib/**/*.js",
     "release": "np patch",
-    "release:patch": "np patch",
-    "release:minor": "np minor",
     "release:major": "np major",
+    "release:minor": "np minor",
+    "release:patch": "np patch",
     "test": "run-p test:*",
     "test:lint": "eslint ./lib ./test",
     "test:unit": "jest",
     "test:unit:cover": "jest --coverage",
     "watch": "npm run compile -- --watch"
-  },
-  "dependencies": {
-    "fs-extra": "^4.0.1",
-    "get-port": "^3.2.0",
-    "npmlog": "^4.1.2",
-    "safe-buffer": "^5.1.1",
-    "tcp-port-used": "^1.0.1",
-    "tmp": "0.0.33"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^7.2.3",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-runtime": "^6.26.0",
-    "eslint": "^4.4.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "firefox-profile": "^1.2.0",
-    "geckodriver": "^1.14.1",
-    "jest": "^24.1.0",
-    "np": "^2.16.0",
-    "npm-run-all": "^4.0.2",
-    "sinon": "^3.2.0",
-    "webdriverio": "^5.4.15"
   },
   "jest": {
     "coverageThreshold": {
@@ -79,5 +47,34 @@
         "statements": 89
       }
     }
+  },
+  "dependencies": {
+    "fs-extra": "^4.0.1",
+    "get-port": "^3.2.0",
+    "npmlog": "^4.1.2",
+    "safe-buffer": "^5.1.1",
+    "tcp-port-used": "^1.0.1",
+    "tmp": "0.0.33"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.4.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "firefox-profile": "^1.2.0",
+    "geckodriver": "^1.19.1",
+    "jest": "^24.9.0",
+    "np": "^2.16.0",
+    "npm-run-all": "^4.0.2",
+    "sinon": "^3.2.0",
+    "webdriverio": "^5.18.0"
   }
 }

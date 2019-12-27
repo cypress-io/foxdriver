@@ -1,15 +1,6 @@
 {
-  "presets": [
-    ["env", {
-      "targets": {
-        "node": "6.10.3"
-      }
-    }],
-    "stage-0"
-  ],
+  "presets": [["@babel/preset-env", {"targets": {"node": true}}]],
   "plugins": [
-    "transform-runtime",
-    "add-module-exports",
-    "transform-class-properties"
+    "@babel/plugin-proposal-class-properties"
   ]
 }

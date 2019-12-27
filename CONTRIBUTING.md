@@ -8,7 +8,7 @@ Thanks for your interest in Foxdriver. We appreicate all kinds of pull requests 
 First clone the project:
 
 ```sh
-$ git clone git@github.com:saucelabs/foxdriver.git
+$ git clone git@github.com:cypress-io/foxdriver.git
 $ cd foxdriver
 ```
 

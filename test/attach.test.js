@@ -21,10 +21,12 @@ beforeAll(async () => {
         })
     })
 
-    browser = remote({
-        logLevel: 'verbose',
+    Geckodriver.start(['--port', '4444'])
+
+    browser = await remote({
+        // logLevel: 'verbose',
         path: '/',
-        desiredCapabilities: {
+        capabilities: {
             browserName: 'firefox',
             'moz:firefoxOptions': {
                 args: ['--start-debugger-server', '9222'],
@@ -32,13 +34,11 @@ beforeAll(async () => {
             }
         }
     })
-
-    Geckodriver.start()
 })
 
 test.only('should be able to attach on a running firefox instance', async () => {
     // start browser
-    await browser.init().url('http://json.org')
+    await browser.url('http://json.org')
 
     // attach to browser
     const { tabs } = await Foxdriver.attach('localhost', 9222)
@@ -50,7 +50,7 @@ test.only('should be able to attach on a running firefox instance', async () => 
 
 afterAll(async () => {
     // close session
-    await browser.end()
+    await browser.closeWindow()
     // shut down driver
     Geckodriver.stop()
 })

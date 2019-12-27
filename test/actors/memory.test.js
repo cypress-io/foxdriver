@@ -42,7 +42,7 @@ test('can get attachment state', async () => {
 
 test('can take census', () => {
     memory.isAttached = false
-    expect(::memory.takeCensus).toThrow()
+    expect(memory.takeCensus).toThrow()
     memory.isAttached = true
 
     memory.takeCensus()
@@ -89,7 +89,7 @@ test('can get allocations settings', async () => {
 
 test('can get allocations', () => {
     memory.isAttached = false
-    expect(::memory.getAllocations).toThrow()
+    expect(memory.getAllocations).toThrow()
     memory.isAttached = true
 
     memory.getAllocations()
@@ -100,7 +100,7 @@ test('can get allocations', () => {
 
 test('can force garbage collection', () => {
     memory.isAttached = false
-    expect(::memory.forceGarbageCollection).toThrow()
+    expect(memory.forceGarbageCollection).toThrow()
     memory.isAttached = true
 
     memory.forceGarbageCollection()
@@ -111,7 +111,7 @@ test('can force garbage collection', () => {
 
 test('can force cycle collection', () => {
     memory.isAttached = false
-    expect(::memory.forceCycleCollection).toThrow()
+    expect(memory.forceCycleCollection).toThrow()
     memory.isAttached = true
 
     memory.forceCycleCollection()
