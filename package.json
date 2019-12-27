@@ -1,6 +1,6 @@
 {
   "name": "@cypress/foxdriver",
-  "version": "0.2.0",
+  "version": "0.0.0-development",
   "description": "Foxdriver is a Node library which provides a high-level API to control Firefox over the Remote Debugging Protocol",
   "keywords": [
     "firefox",
