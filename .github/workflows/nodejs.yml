@@ -1,0 +1,55 @@
+name: Node CI
+
+on: [push]
+
+jobs: 
+  lint:
+    runs-on: [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: lint
+      run: |
+        yarn install --frozen-lockfile
+        yarn lint
+
+  test:
+    runs-on: [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: build + test
+      run: |
+        yarn install --frozen-lockfile
+        yarn build
+        yarn test
+      env:
+        CI: true
+  deploy:
+    runs-on: [ubuntu-latest]
+    needs: [test, lint]
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: build
+        run: |
+          yarn install --frozen-lockfile
+          yarn build
+
+      - uses: codfish/semantic-release-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - run: |
+          echo $RELEASE_VERSION
+          echo $RELEASE_MAJOR
+          echo $RELEASE_MINOR
+          echo $RELEASE_PATCH
+     
