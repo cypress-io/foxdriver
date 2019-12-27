@@ -17,12 +17,14 @@ jobs:
 
   test:
     runs-on: [ubuntu-latest]
-    container: cypress/browsers:node10.16.0-chrome77-ff71
+    container:
+      image: cypress/browsers:node10.16.0-chrome77-ff71
+      options: -u node
     steps:
     - uses: actions/checkout@v1
     - name: build + test
       run: |
-        su node
+        whoami
         firefox -v
         export DISPLAY=:99; Xvfb :99 &
         yarn install --frozen-lockfile
