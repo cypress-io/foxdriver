@@ -30,8 +30,8 @@ beforeAll(async () => {
             browserName: 'firefox',
             'moz:firefoxOptions': {
                 args: [
-                    '--start-debugger-server', '9222',
-                    '-headless'
+                    '--start-debugger-server', '9222'
+                    // '-headless'
                 ],
                 profile: zippedProfile
             }
