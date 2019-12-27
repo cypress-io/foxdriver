@@ -22,9 +22,11 @@ jobs:
       options: -u node
     steps:
     - uses: actions/checkout@v1
+
     - name: build + test
       run: |
         whoami
+        ls -l
         firefox -v
         export DISPLAY=:99; Xvfb :99 &
         yarn install --frozen-lockfile
