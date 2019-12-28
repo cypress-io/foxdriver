@@ -45,7 +45,7 @@ jobs:
       - name: deploy
         run: |
           yarn install --frozen-lockfile
-          yarn build
+          yarn build:prod
 
       - uses: codfish/semantic-release-action@master
         env:

@@ -24,9 +24,11 @@
   "main": "build/index.js",
   "scripts": {
     "build": "run-s clean compile",
+    "build:prod": "run-s clean compile:prod",
     "ci": "run-s eslint test:unit:cover",
     "clean": "rm -rf ./build",
     "compile": "babel lib/ -d build/ --ignore lib/config --source-maps inline",
+    "compile:prod": "babel lib/ -d build/ --ignore lib/config",
     "eslint": "eslint ./lib/**/*.js",
     "lint": "eslint --ext json,ts,js .",
     "release": "np patch",
