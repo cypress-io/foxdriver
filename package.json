@@ -35,8 +35,8 @@
     "release:major": "np major",
     "release:minor": "np minor",
     "release:patch": "np patch",
-    "test": "run-s test:*",
-    "test:e2e": "jest 'attach.test.js' --runInBand",
+    "test": "run-p test:*",
+    "test:e2e": "jest 'test/e2e' --runInBand",
     "test:unit": "jest 'test/unit'",
     "test:unit:cover": "yarn test:unit --coverage",
     "watch": "npm run compile -- --watch"
