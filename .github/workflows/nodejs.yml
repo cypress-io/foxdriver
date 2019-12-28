@@ -26,9 +26,6 @@ jobs:
     - name: build + test
       run: |
         chown -R root $HOME
-        whoami
-        id
-        ls -l
         firefox -v
         export DISPLAY=:99; Xvfb :99 &
         yarn install --frozen-lockfile
@@ -45,7 +42,7 @@ jobs:
       - name: deploy
         run: |
           yarn install --frozen-lockfile
-          yarn build
+          yarn build:prod
 
       - uses: codfish/semantic-release-action@master
         env:

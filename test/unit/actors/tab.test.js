@@ -61,36 +61,36 @@ test('can reload', () => {
 })
 
 test('has available domains registerd', () => {
-    jest.mock('../../../lib/domains/console', () => jest.fn(() => ({})))
+    jest.mock('../../../lib/domains/console', () => ({default: jest.fn(() => ({}))}))
     expect(tab.console).toBeDefined()
 
-    jest.mock('../../../lib/domains/network', () => jest.fn(() => ({})))
+    jest.mock('../../../lib/domains/network', () => ({default: jest.fn(() => ({}))}))
     expect(tab.network).toBeDefined()
 
-    jest.mock('../../../lib/domains/memory', () => jest.fn(() => ({})))
+    jest.mock('../../../lib/domains/memory', () => ({default: jest.fn(() => ({}))}))
     expect(tab.memory).toBeDefined()
 
-    jest.mock('../../../lib/domains/performance', () => jest.fn(() => ({})))
+    jest.mock('../../../lib/domains/performance', () => ({default: jest.fn(() => ({}))}))
     expect(tab.performance).toBeDefined()
 
-    jest.mock('../../../lib/domains/profiler', () => jest.fn(() => ({})))
+    jest.mock('../../../lib/domains/profiler', () => ({default: jest.fn(() => ({}))}))
     expect(tab.profiler).toBeDefined()
 
-    jest.mock('../../../lib/domains/timeline', () => jest.fn(() => ({})))
+    jest.mock('../../../lib/domains/timeline', () => ({default: jest.fn(() => ({}))}))
     expect(tab.timeline).toBeDefined()
 
-    jest.mock('../../../lib/domains/styleSheets', () => jest.fn(() => ({})))
+    jest.mock('../../../lib/domains/styleSheets', () => ({default: jest.fn(() => ({}))}))
     expect(tab.styleSheets).toBeDefined()
 
-    jest.mock('../../../lib/domains/cssUsage', () => jest.fn(() => ({})))
+    jest.mock('../../../lib/domains/cssUsage', () => ({default: jest.fn(() => ({}))}))
     expect(tab.cssUsage).toBeDefined()
 
-    jest.mock('../../../lib/domains/cssProperties', () => jest.fn(() => ({})))
+    jest.mock('../../../lib/domains/cssProperties', () => ({default: jest.fn(() => ({}))}))
     expect(tab.cssProperties).toBeDefined()
 
-    jest.mock('../../../lib/domains/emulation', () => jest.fn(() => ({})))
+    jest.mock('../../../lib/domains/emulation', () => ({default: jest.fn(() => ({}))}))
     expect(tab.emulation).toBeDefined()
 
-    jest.mock('../../../lib/domains/inspector', () => jest.fn(() => ({})))
+    jest.mock('../../../lib/domains/inspector', () => ({default: jest.fn(() => ({}))}))
     expect(tab.inspector).toBeDefined()
 })
